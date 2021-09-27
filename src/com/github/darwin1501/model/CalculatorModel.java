@@ -1,4 +1,4 @@
-package com.darwin.model;
+package com.github.darwin1501.model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

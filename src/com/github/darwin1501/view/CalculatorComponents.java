@@ -1,4 +1,4 @@
-package com.darwin.view;
+package com.github.darwin1501.view;
 
 import javax.swing.*;
 import java.awt.*;

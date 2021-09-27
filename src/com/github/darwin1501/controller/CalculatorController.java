@@ -1,7 +1,7 @@
-package com.darwin.controller;
+package com.github.darwin1501.controller;
 
-import com.darwin.model.CalculatorModel;
-import com.darwin.view.CalculatorComponents;
+import com.github.darwin1501.view.CalculatorComponents;
+import com.github.darwin1501.model.CalculatorModel;
 
 public class CalculatorController {
 
