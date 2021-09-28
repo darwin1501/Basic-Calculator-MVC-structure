@@ -6,12 +6,11 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 
-public class CalculatorComponents implements PropertyChangeListener {
+public class CalculatorComponents extends JFrame implements PropertyChangeListener{
 
     private JPanel numPad;
     private JPanel btnPanelTop;
     private JPanel btnPanelSide;
-    private CalculatorFrame frame;
     private JButton clearBtn;
     private JButton divideBtn;
     private JButton multiplyBtn;
@@ -31,21 +30,17 @@ public class CalculatorComponents implements PropertyChangeListener {
     private JButton backSpaceBtn;
     private JButton dotBtn;
     private JLabel calculatorDisplay;
-    private int btnNumHeight;
-    private int btnNumWidth;
-//    private int calculatorIntValue;
-//    private double calculatorDoubleValue;
+    private int btnNumHeight = 50;
+    private int btnNumWidth = 100;
     private String calculatorStringValue = "0";
-//    private String inputValue;
-//    private int charDisplayLength;
 
     public CalculatorComponents(){
 
-        btnNumHeight = 50;
-        btnNumWidth = 100;
-
-        frame = new CalculatorFrame();
-
+        this.setTitle("Basic Calculator");
+        this.setSize(435,393);
+        this.setLocationRelativeTo(null);
+        this.setLayout(null);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 //        display
         calculatorDisplay = new JLabel(getCalculatorStringValue(), SwingConstants.RIGHT);
         calculatorDisplay.setBounds(10,10,400,70);
@@ -53,28 +48,28 @@ public class CalculatorComponents implements PropertyChangeListener {
         calculatorDisplay.setFont(new Font("Roboto",Font.PLAIN,30));
         calculatorDisplay.setBackground(Color.GRAY);
         calculatorDisplay.setBorder(BorderFactory.createLineBorder(Color.GRAY, 10));
-        frame.getFrame().add(calculatorDisplay);
+        this.add(calculatorDisplay);
 //        btnPanelTop
         btnPanelTop = new JPanel();
         btnPanelTop.setBounds(10,95,300,50);
         btnPanelTop.setOpaque(true);
         btnPanelTop.setBackground(Color.red);
         btnPanelTop.setLayout(new FlowLayout(FlowLayout.CENTER, 0,0));
-        frame.getFrame().add(btnPanelTop);
+        this.add(btnPanelTop);
 
         btnPanelSide = new JPanel();
         btnPanelSide.setBounds(310,95,100,250);
         btnPanelSide.setOpaque(true);
         btnPanelSide.setBackground(Color.GRAY);
         btnPanelSide.setLayout(new FlowLayout(FlowLayout.CENTER, 0,0));
-        frame.getFrame().add(btnPanelSide);
+        this.add(btnPanelSide);
 
         numPad = new JPanel();
         numPad.setOpaque(true);
         numPad.setBackground(Color.GRAY);
         numPad.setBounds(10,145,300,200);
         numPad.setLayout(new FlowLayout(FlowLayout.CENTER, 0,0));
-        frame.getFrame().add(numPad);
+        this.add(numPad);
         //        buttons
         sevenBtn = new JButton("7");
         sevenBtn.setPreferredSize(new Dimension(btnNumWidth, btnNumHeight));
@@ -166,7 +161,7 @@ public class CalculatorComponents implements PropertyChangeListener {
         equalsBtn.setFont(new Font("Roboto",Font.PLAIN,20));
         btnPanelSide.add(equalsBtn);
 
-        frame.getFrame().setVisible(true);
+        this.setVisible(true);
     }
 
     public JLabel getCalculatorDisplay(){
