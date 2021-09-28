@@ -7,7 +7,7 @@ import com.github.darwin1501.view.CalculatorComponents;
 public class App {
 
     public static void main(String[] args) {
-	// write your code here
+
         CalculatorComponents calculatorComponents = new CalculatorComponents();
         CalculatorModel calculatorModel = new CalculatorModel();
 
